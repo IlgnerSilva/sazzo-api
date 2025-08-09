@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "ES2022",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"incremental": true,
+		"skipLibCheck": true,
+		"strictNullChecks": false,
+		"noImplicitAny": false,
+		"strictBindCallApply": false,
+		"forceConsistentCasingInFileNames": false,
+		"noFallthroughCasesInSwitch": false,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		// Configurações específicas para resolver o problema de serialização
+		"maxNodeModuleJsDepth": 0,
+		"declaration": false,
+		"declarationMap": false,
+		// Aumentar o limite de serialização de tipos
+		"noImplicitReturns": false,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@/infra/*": ["./src/infra/*"],
+			"@/modules/*": ["./src/modules/*"],
+			"@/common/*": ["./src/common/*"]
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"declaration": false,
+			"declarationMap": false
+		}
+	},
+	"include": ["src/**/*", "test/**/*"],
+	"exclude": ["node_modules", "dist", "**/*.spec.ts"]
+}
